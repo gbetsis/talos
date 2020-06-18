@@ -103,7 +103,7 @@
     </visual>
     <!-- thirdwheel -->
     <collision name="thirdwheel_collision">
-      <origin rpy=" 0 0 0" xyz="0.1 0 -0.03"/>
+      <origin rpy=" 0 0 0" xyz="0.15 0 -0.03"/>
       <geometry>
         <sphere radius="0.02"/>
       </geometry>
