@@ -102,16 +102,16 @@
       <material name="grey"/>
     </visual>
     <!-- thirdwheel -->
-    <collision name="thirdwheel_collision">
+    <!--<collision name="thirdwheel_collision">
       <origin rpy=" 0 0 0" xyz="0.15 0 -0.03"/>
       <geometry>
         <sphere radius="0.02"/>
       </geometry>
       <surface>
         <friction>
-          <ode>
+          <ode> -->
             <!-- no friction -->
-            <mu>0</mu>
+         <!--   <mu>0</mu>
             <mu2>0</mu2>
             <slip1>1.0</slip1>
             <slip2>1.0</slip2>
@@ -120,11 +120,41 @@
       </surface>
     </collision>
     <visual name="thirdwheel_visual">
-      <origin rpy=" 0 0 0" xyz="0.1 0 -0.03"/>
+      <origin rpy=" 0 0 0" xyz="0.15 0 -0.03"/>
       <geometry>
         <sphere radius="0.02"/>
       </geometry>
+    </visual> -->
+
+  </link>
+     <!-- Caster Wheel --> 
+  <joint name="fixed" type="fixed">
+    <parent link="link_chassis"/>
+    <child link="caster_wheel"/>
+  </joint>
+
+  <link name="caster_wheel">
+
+    <collision>
+      <origin rpy=" 0 0 0" xyz="-0.15 0 -0.03"/>
+      <geometry>
+    <sphere radius="0.02"/>
+      </geometry>
+    </collision>
+
+    <visual> 
+      <origin rpy=" 0 0 0" xyz="-0.15 0 -0.03"/>
+      <geometry>
+    <sphere radius="0.02"/>
+      </geometry>
+      <material name="red"/>
     </visual>
+
+    <inertia>
+      <origin xyz="-0.15 0 0.1" rpy="0 0 0"/>
+      <mass value="0.5"/>
+      <sphere_inertia m="0.5" r="0.02"/>
+    </inertia>
   </link>
   
 
@@ -185,7 +215,7 @@
   </link>
   
   <joint name="joint_rightwheel" type="continuous">
-    <origin rpy="0 0 0" xyz="-0.05 0.10 0"/>
+    <origin rpy="0 0 0" xyz="0.15 0.10 0"/>
     <child link="link_rightwheel"/>
     <parent link="link_chassis"/>
     <axis rpy="0 0 0" xyz="0 1 0"/>
@@ -216,7 +246,7 @@
   </link>
   
   <joint name="joint_leftwheel" type="continuous">
-    <origin rpy="0 0 0" xyz="-0.05 -0.10 0"/>
+    <origin rpy="0 0 0" xyz="0.15 -0.10 0"/>
     <child link="link_leftwheel"/>
     <parent link="link_chassis"/>
     <axis rpy="0 0 0" xyz="0 1 0"/>
