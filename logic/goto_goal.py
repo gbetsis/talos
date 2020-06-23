@@ -23,6 +23,10 @@ dist_precision = 0.5
 # publishers
 pub = None
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 025817999e1e9c468a4f5808d587c0b60ed83918
 def fix_katefthinsi(goal_pos):
     global katefthinsi, pub, katefthinsi_precision, robot_state
     desired_katefthinsi = math.atan2(goal_pos.y - current_position.y, goal_pos.x - current_position.x)
